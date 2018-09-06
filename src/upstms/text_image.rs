@@ -4,14 +4,12 @@ extern crate reqwest;
 use self::regex::Regex;
 use self::reqwest::StatusCode;
 use httpc::*;
-use std::fs::File;
-use std::io::prelude::*;
-use std::path::Path;
 use std::{self, str};
+use utils;
 
-pub fn gen_html(path: &str) {
+pub fn gen_html(width: u32, path: &str) {
     let form = reqwest::multipart::Form::new()
-        .text("width", "100")
+        .text("width", width.to_string())
         .text("textcolor", "BLACK")
         .text("bgcolor", "WHITE")
         .text("invert", "0")
@@ -29,14 +27,8 @@ pub fn gen_html(path: &str) {
             Regex::new(r"<!-- IMAGE BEGINS HERE -->([\s\S]*)<!-- IMAGE ENDS HERE -->").unwrap();
         let cap = re.captures(body).unwrap();
         let html = &cap[0];
-        let file_name = Path::new(path)
-            .file_name()
-            .unwrap()
-            .to_str()
-            .unwrap()
-            .to_owned();
-        let mut file = File::create(file_name + ".html").unwrap();
-        file.write_all(html.as_bytes()).unwrap();
+        let file_name = utils::get_filename(path).to_owned();
+        utils::save_to(html.as_bytes(), &(file_name + ".html"));
     } else {
         println!("结果解析错误。您可以手动进行排查：https://www.text-image.com");
         std::process::exit(1);
