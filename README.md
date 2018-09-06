@@ -1,47 +1,49 @@
 # TIMG
 
 ````
-```..````..`````````.```````````````````.```...```
-...................-:/+++++/:-....................
-.``...`.....``./sdNMMMMMMMMMMMNmds+-````.`````````
-`````````.``.sNMMMMMMMMMMMMMMMMMMMMNdo.`.````````.
-`````````.`+NMMMMMMMNdhhyyyhddmMMMMMMMNs-`````````
-`````````.oMMMMNho:.```````````.-/sdNMMMm/```````.
-.``..``..sMMMMMh..``````````````````.+dMMN-```````
-......`.oMMMMMMo..````````````````````:MMMs.......
-.```````mMMMMMm-..````````````````````.MMMs```````
-````````dMMMMm:..`````````````````````.MMM+```````
-````````+NMMM+-:+/:::::::-``.---:----`/MMN.```````
-`````````:+hysyy.```````.sooo...``.../yNmo`````.``
-`````````.....-o.````````s/s/`````````h/..```````.
-..`..`.`.......s-``````.+-``o````````-+``.....``..
-.````...`......-/:::::/:.```./:--..-:+````````````
-`````````.......```````-+.`./....--..`````````````
-`````````.``....````````````````````````.`````````
-`````````.``.....``````````````````````..````````.
-````..```.``.....```````````````````````.```..````
-..`...```..-:.....``````````````````.```.`....```.
-.`.....`../md-`...`````````````````````..``.``````
-.````.::+yNMMm:``...`````````````.````````````````
-.`-/sdNMMMMMMMNo````...```````..`:hys+:-.`````````
-ohmMMMMMMMMMMMMMh-  ```.......`` -MMMMNmds/-.`````
-MMMMMMMMMMMMMMMMMNo`    `.--.`   .MMMMMMMMMNdyo/-.
-MMMMMMMMMMMMMMMMMMMh.  -+sysso-  `NMMMMMMMMMMMMMNm
-MMMMMMMMMMMMMMMMMMMMd.-oyyyyyy/   NMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMd. .oyyy/    mMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMd. .yyyo`   dMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMd.+yyyy+`  hMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMmhyyyyy+  yMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMMNhyyyyy/ oMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMMMNhyyyyy:oMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMMMMNhyyyyysMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMNhyyyydMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMNhyyyhMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNyyyhMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNyyhMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNyhMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNhMMMMMMMMMMMMMMM
-MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNMMMMMMMMMMMMMMM
+                                                                                     
+                                                                                     
+                                                                                     
+                                                                                     
+                                     -.`                                             
+                                   `/oo+-                    ..                      
+                                   /oo:+o/.``             `-+oo:                     
+                                 `:s+/--/oooooo++//:--...:oo//oo.                    
+                             `.:+o+/:---------:::///+++oo+/--+/s+`                   
+                           .:+o+/----------------------------:-+s/.                  
+                         ./oo/:---------:--::-------------------:/o:`                
+                       ./o+/------------:::-----------------------:o+.               
+                     `:oo/------......---:-----.....----------------+o.              
+                    `/o+-..---:oso/-...------........----------------oo.             
+                   `/o/`  `.-ssoNMdh:..------.--:+syyo/---------------o+`            
+                   /s+`    `-/`oMMmMo---------/ss/+yMMNmo-------------:s/            
+                  .oo`     `-/--ydmy:--------+h-`.hdMMMMh--------------+o.           
+                  /s:       .-::://:----------/+:-sNNmh+----..---------:s:           
+                 `oo`        `-+ssso+:----..``.-:::/::----.` `----------s+           
+                 -s+         -dNMMMMMNy.``     ```......``    .---------o+           
+                 :s/        .+mshMNhdMd` `                   `----------oo           
+                 :s/        `-ymmMNddd: ```                 `.----------oo           
+                 .o+`        /++yyso+:.`` `.-.              `.----------oo           
+                 `+s-        `/ohhhso+/////:-`                 ````.----s+           
+                  -oo.`        `..---::-.`                          .--:s/           
+                   :oo-``                                           `--+s-           
+                    -oo/-.`                                         .--oo`           
+                     `/oo+:-.``                                    .--/s/            
+                    `.-oo+oo+/:...```                           ``.---os.            
+                  `-+ooo.`-/+++.``.```                         `.-----os.            
+                `./o/-:. `----.`                                `.----oo`            
+              ./+os/---``------..``.-``       ``.```-::::--.`     ---/s/             
+            `:o+/s+----`/+----------////:-..:/+o+/-------.--:`````--:oo.             
+           .+o/-/s+-----o+--------------:/oo+:---------------------:oo-              
+          `+o+:-:oo:--//oo/-------------:oo-`  `.-----------------:oo-               
+            .:////+o-.``-/oo/:----------+s/-`    --:///:--------:+o+.                
+                  ./o+//+o++/o++//::----os/.:../:+o+oo/oo++++++oo/.                  
+                    `.....`` `.-:/++ooo+oooooo+/:.``-o-``..---.``                    
+                                     ````` -oo:./.:-+o/                              
+                                            `-/+oo+oo+.                              
+                                                `````                                
+                                                                                     
+                                                                                     
 ````
 
 使用 TIMG 将图片转为 ASCII 文本！
@@ -63,7 +65,7 @@ Limit size:
 ./timg -w 50 img.jpg
 ````
 
-## Help(timg -h):
+## Help:
 
 ```` bash
 TIMG alpha
@@ -83,3 +85,20 @@ OPTIONS:
 ARGS:
     <path>    The image file path
 ````
+
+## TODO(1.0)
+
+* [x] 基本的图片输入网页输出
+* [x] 限制输出大小
+* [ ] 强制缩放网页字体大小
+* [ ] 浏览器自动预览
+* [ ] 增加输出目标：文本和终端
+* [ ] 添加上游：本地算法
+
+## TODO(2.0)
+
+* [ ] 本地 HTTP 服务器支持
+* [ ] ASCII 动画
+  * [ ] 输入源支持视频文件
+  * [ ] 输出每一帧为文本，支持自定义帧数
+  * [ ] 本地支持循环播放每一帧文本
