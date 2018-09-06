@@ -11,6 +11,11 @@ pub mod utils {
         file_name
     }
 
+    pub fn get_parent_path(path: &str) -> &str {
+        let parent_path = Path::new(path).parent().unwrap().to_str().unwrap();
+        parent_path
+    }
+
     pub fn save_to(bytes: &[u8], file_path: &str) {
         let mut file = File::create(file_path).unwrap();
         file.write_all(bytes).unwrap();
