@@ -1,29 +1,34 @@
 # TIMG
 
 ````
-```````````````````````````````````````````````````````
-````````````````-:----.```````.-::::--.````````...`````
-```````````````sNNMMMMNh+++o+/:-------::++/:/smNNNmy:``
-`````````````./NMMMMMMMd+-.````````````````-odMMMMMMNo`
-````````.:+ydNMMMMMMMNy-`````````````````````.sNMMMMMd`
-`````-+hmNMMMMMMMMMMm+.``````````````..```````.sNMMMMh`
-``-+hNMMMMMMMMMMMMMd:```````.-::/-``/hhys/.````.sNMNh:`
-/ymMMMMMMMMMMMMMMMyo.`....:shhhddh+./o++/:-.....-ss-```
-NMMMMMMMMMMMMMMNmms:..-:::+sssyyo/:.`-+yo:--:::::+y-```
-MMMMMMMMMMNmds+/-o+--:/++oosyys+:..```.:///++ooo++h+```
-MMMMMMMMMNh/:.../o:-:+oossssoo++so::://oydyssssssoyh:``
-mMMMMMMMMMMMNmmmNo.-/+ossssssyyhsoyhddyssyhysssssoyNmy:
-:hNMMMMMMMMMMMMMMs.-:/+oosssyyyhyyssoo+oysooosssoosNMMy
-`.+mMMMMMMMMMMMMMms:--:/+++++/+oooo+::-/+::/++++++hMMMy
-```-yNMMMMMMMMMMMMNd+:---:--:::////+oo++:----::+smMMMMh
-`````/hNMMMMMMMMMMMMNmh+-..````.....---....-//ymMMMMMMh
-```````/ymMMMMMMMMMMMMMNmdyso+::::////++syhmNNMMMMMMMMh
-```` ````-syyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyo
-```-`.-````/```.----..-----`-..--..-::-.`----.`.-`:```
-``:y.+h/``.N-``ymodd/-/yms/-my+od-/dddd/`mymhs`hyyyo+
-```d/+y.`.hsh-`+hohho-ssm/s-hm+yy:.dhhd-.hhdsy.myooo+
-```++oo+-o-`.+--++oo+``.o``.+:-o:`//oo//--o+o:.o/./o.
-```````````````````````````````````````````````````````
+
+                            `
+                         ./o/
+                       .+hss+
+                     `/hddyys
+                    .yddmmdyy-
+                   :hddmmmmhyo
+                 `+dddmmmmmmhy/
+                `+dddmmmmmmmmdy/`
+               `+dddmmmmmmmmmmdyo.
+               /hddmmmmmmmmmmmmmdy/`
+              :yddmmmmmmmmmmmmmmmmdy/`
+             .sdddmmmmmmmmmmmmmmmmmmdh/`
+             +hddddddddddddddddddddddddy:
+            .sddddddddddddddddddddddddddd/
+            /ydddddddddddddddddddddddddddd-
+            oyddddddddddddddddddddddddddddo
+            syhddddddddddddddddddddddhhhhhy
+            oyhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
+            /shhhhhhhhhhhhhhhhhhhhhhhhyyyy+
+            .syyyyyyyyyyyyyyyyyyyyyyyyyyyy.
+             /ssyyyyyyyyyyyyyyyyyyyyyssss/
+              /sssso+++ooossssssssssssss/
+               -ossso+//::::/+sssssssso-
+                `-+ossssooo++ossssss+-`
+                   `-/+osssssssso/:.
+                        `.....`
+
 ````
 
 使用 TIMG 将图片转为 ASCII 文本！
@@ -47,7 +52,7 @@ Limit size:
 
 ## Help:
 
-```` bash
+```` text
 TIMG alpha
 Hentioe Cl (绅士喵)
 Image to ASCII
@@ -74,6 +79,7 @@ ARGS:
 * [x] 限制输出大小
 * [x] 增加输出目标：文本和终端
 * [x] 强制缩放网页字体大小
+* [x] 支持网络路径
 * [ ] 浏览器自动预览
 * [ ] 添加上游：本地算法
 

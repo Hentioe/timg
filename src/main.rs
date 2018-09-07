@@ -2,8 +2,8 @@ extern crate clap;
 extern crate timg;
 
 use clap::{App, Arg};
-use timg::upstms;
 use timg::upstms::Upstream;
+use timg::{httpc, upstms};
 
 const DEFAULT_WIDTH: &'static str = "100";
 const DEFAULT_SCALE: &'static str = "1";
@@ -49,6 +49,17 @@ fn main() {
         .unwrap_or(DEFAULT_SCALE)
         .parse::<u32>()
         .unwrap_or(DEFAULT_SCALE.parse::<u32>().unwrap());
+
+    let path = if let Some(i) = path.find("http") {
+        if i == 0 {
+            httpc::download(path, "./.timg_download").unwrap();
+            "./.timg_download"
+        } else {
+            path
+        }
+    } else {
+        path
+    };
 
     match output {
         "html" => {

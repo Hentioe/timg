@@ -1,5 +1,5 @@
-extern crate timg;
 extern crate reqwest;
+extern crate timg;
 
 use reqwest::StatusCode;
 use std::str;
@@ -28,4 +28,13 @@ fn http_post() {
     if let Ok(body) = str::from_utf8(&body.as_bytes()) {
         assert!(body.contains("<!-- IMAGE BEGINS HERE -->"))
     }
+}
+
+#[test]
+fn download_file() {
+    let file_name = download(
+        "https://www.baidu.com/img/bd_logo1.png?where=super",
+        "./.timg_download",
+    ).unwrap();
+    assert_eq!(".timg_download", file_name);
 }
