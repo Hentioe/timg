@@ -1,10 +1,31 @@
 pub mod text_image;
 
-pub mod upstms {
+use utils;
 
-    pub trait Upstream {
-        fn gen_text(path: &str, width: u32) -> Result<&'static str, &'static str>;
-        fn gen_html(path: &str, width: u32, scale: f32) -> Result<&'static str, &'static str>;
-        fn output(path: &str, width: u32) -> Result<&'static str, &'static str>;
+pub type UpResult = Result<String, &'static str>;
+
+pub trait Upstream {
+    fn gen_text(&self, path: &str, width: u32) -> UpResult;
+
+    fn gen_html(&self, path: &str, width: u32, scale: u32) -> UpResult {
+        match self.gen_text(path, width) {
+            Ok(text) => {
+                let file_name = utils::get_filename(path);
+                let html = format!(
+                    "<font style=\"font-size:{}px\" color=\"black\">\
+                     <pre>{}</pre>\
+                     </font>",
+                    scale, text
+                );
+                let output_file = format!("{}.html", file_name);
+                utils::save_to(html.as_bytes(), &output_file);
+                Ok(output_file)
+            }
+            err => err,
+        }
+    }
+
+    fn print(&self, path: &str, width: u32) {
+        println!("{}", self.gen_text(path, width).unwrap())
     }
 }

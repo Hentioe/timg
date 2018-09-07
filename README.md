@@ -1,49 +1,29 @@
 # TIMG
 
 ````
-                                                                                     
-                                                                                     
-                                                                                     
-                                                                                     
-                                     -.`                                             
-                                   `/oo+-                    ..                      
-                                   /oo:+o/.``             `-+oo:                     
-                                 `:s+/--/oooooo++//:--...:oo//oo.                    
-                             `.:+o+/:---------:::///+++oo+/--+/s+`                   
-                           .:+o+/----------------------------:-+s/.                  
-                         ./oo/:---------:--::-------------------:/o:`                
-                       ./o+/------------:::-----------------------:o+.               
-                     `:oo/------......---:-----.....----------------+o.              
-                    `/o+-..---:oso/-...------........----------------oo.             
-                   `/o/`  `.-ssoNMdh:..------.--:+syyo/---------------o+`            
-                   /s+`    `-/`oMMmMo---------/ss/+yMMNmo-------------:s/            
-                  .oo`     `-/--ydmy:--------+h-`.hdMMMMh--------------+o.           
-                  /s:       .-::://:----------/+:-sNNmh+----..---------:s:           
-                 `oo`        `-+ssso+:----..``.-:::/::----.` `----------s+           
-                 -s+         -dNMMMMMNy.``     ```......``    .---------o+           
-                 :s/        .+mshMNhdMd` `                   `----------oo           
-                 :s/        `-ymmMNddd: ```                 `.----------oo           
-                 .o+`        /++yyso+:.`` `.-.              `.----------oo           
-                 `+s-        `/ohhhso+/////:-`                 ````.----s+           
-                  -oo.`        `..---::-.`                          .--:s/           
-                   :oo-``                                           `--+s-           
-                    -oo/-.`                                         .--oo`           
-                     `/oo+:-.``                                    .--/s/            
-                    `.-oo+oo+/:...```                           ``.---os.            
-                  `-+ooo.`-/+++.``.```                         `.-----os.            
-                `./o/-:. `----.`                                `.----oo`            
-              ./+os/---``------..``.-``       ``.```-::::--.`     ---/s/             
-            `:o+/s+----`/+----------////:-..:/+o+/-------.--:`````--:oo.             
-           .+o/-/s+-----o+--------------:/oo+:---------------------:oo-              
-          `+o+:-:oo:--//oo/-------------:oo-`  `.-----------------:oo-               
-            .:////+o-.``-/oo/:----------+s/-`    --:///:--------:+o+.                
-                  ./o+//+o++/o++//::----os/.:../:+o+oo/oo++++++oo/.                  
-                    `.....`` `.-:/++ooo+oooooo+/:.``-o-``..---.``                    
-                                     ````` -oo:./.:-+o/                              
-                                            `-/+oo+oo+.                              
-                                                `````                                
-                                                                                     
-                                                                                     
+```````````````````````````````````````````````````````
+````````````````-:----.```````.-::::--.````````...`````
+```````````````sNNMMMMNh+++o+/:-------::++/:/smNNNmy:``
+`````````````./NMMMMMMMd+-.````````````````-odMMMMMMNo`
+````````.:+ydNMMMMMMMNy-`````````````````````.sNMMMMMd`
+`````-+hmNMMMMMMMMMMm+.``````````````..```````.sNMMMMh`
+``-+hNMMMMMMMMMMMMMd:```````.-::/-``/hhys/.````.sNMNh:`
+/ymMMMMMMMMMMMMMMMyo.`....:shhhddh+./o++/:-.....-ss-```
+NMMMMMMMMMMMMMMNmms:..-:::+sssyyo/:.`-+yo:--:::::+y-```
+MMMMMMMMMMNmds+/-o+--:/++oosyys+:..```.:///++ooo++h+```
+MMMMMMMMMNh/:.../o:-:+oossssoo++so::://oydyssssssoyh:``
+mMMMMMMMMMMMNmmmNo.-/+ossssssyyhsoyhddyssyhysssssoyNmy:
+:hNMMMMMMMMMMMMMMs.-:/+oosssyyyhyyssoo+oysooosssoosNMMy
+`.+mMMMMMMMMMMMMMms:--:/+++++/+oooo+::-/+::/++++++hMMMy
+```-yNMMMMMMMMMMMMNd+:---:--:::////+oo++:----::+smMMMMh
+`````/hNMMMMMMMMMMMMNmh+-..````.....---....-//ymMMMMMMh
+```````/ymMMMMMMMMMMMMMNmdyso+::::////++syhmNNMMMMMMMMh
+```` ````-syyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyo
+```-`.-````/```.----..-----`-..--..-::-.`----.`.-`:```
+``:y.+h/``.N-``ymodd/-/yms/-my+od-/dddd/`mymhs`hyyyo+
+```d/+y.`.hsh-`+hohho-ssm/s-hm+yy:.dhhd-.hhdsy.myooo+
+```++oo+-o-`.+--++oo+``.o``.+:-o:`//oo//--o+o:.o/./o.
+```````````````````````````````````````````````````````
 ````
 
 使用 TIMG 将图片转为 ASCII 文本！
@@ -80,7 +60,9 @@ FLAGS:
     -V, --version    Prints version information
 
 OPTIONS:
-    -w, --width <width>    Set output ASCII text width
+    -o, --output <output>    Output target: html/default: text for terminal
+    -s, --scale <scale>      Scale html font size, unit: [pixel]
+    -w, --width <width>      Set output ASCII text width
 
 ARGS:
     <path>    The image file path
@@ -90,9 +72,9 @@ ARGS:
 
 * [x] 基本的图片输入网页输出
 * [x] 限制输出大小
-* [ ] 强制缩放网页字体大小
+* [x] 增加输出目标：文本和终端
+* [x] 强制缩放网页字体大小
 * [ ] 浏览器自动预览
-* [ ] 增加输出目标：文本和终端
 * [ ] 添加上游：本地算法
 
 ## TODO(2.0)
