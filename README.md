@@ -36,18 +36,12 @@
 
 ## Usage
 
-Normal:
-
 ```` bash
-./timg img.jpg
-````
+# Local file
+./timg ./res/img.jpg
 
-Output file: `img.jpg.html`
-
-Limit size:
-
-````
-./timg -w 50 img.jpg
+# Remote file
+./timg https://www.baidu.com/img/bd_logo1.png
 ````
 
 ## Help:
