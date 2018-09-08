@@ -1,35 +1,24 @@
 # TIMG
 
-````
-
-                            `
-                         ./o/
-                       .+hss+
-                     `/hddyys
-                    .yddmmdyy-
-                   :hddmmmmhyo
-                 `+dddmmmmmmhy/
-                `+dddmmmmmmmmdy/`
-               `+dddmmmmmmmmmmdyo.
-               /hddmmmmmmmmmmmmmdy/`
-              :yddmmmmmmmmmmmmmmmmdy/`
-             .sdddmmmmmmmmmmmmmmmmmmdh/`
-             +hddddddddddddddddddddddddy:
-            .sddddddddddddddddddddddddddd/
-            /ydddddddddddddddddddddddddddd-
-            oyddddddddddddddddddddddddddddo
-            syhddddddddddddddddddddddhhhhhy
-            oyhhhhhhhhhhhhhhhhhhhhhhhhhhhhs
-            /shhhhhhhhhhhhhhhhhhhhhhhhyyyy+
-            .syyyyyyyyyyyyyyyyyyyyyyyyyyyy.
-             /ssyyyyyyyyyyyyyyyyyyyyyssss/
-              /sssso+++ooossssssssssssss/
-               -ossso+//::::/+sssssssso-
-                `-+ossssooo++ossssss+-`
-                   `-/+osssssssso/:.
-                        `.....`
-
-````
+    ```````````````````````````````````````````````````````
+    ````````````````-:----.```````.-::::--.````````...`````
+    ```````````````sNNMMMMNh+++o+/:-------::++/:/smNNNmy:``
+    `````````````./NMMMMMMMd+-.````````````````-odMMMMMMNo`
+    ````````.:+ydNMMMMMMMNy-`````````````````````.sNMMMMMd`
+    `````-+hmNMMMMMMMMMMm+.``````````````..```````.sNMMMMh`
+    ``-+hNMMMMMMMMMMMMMd:```````.-::/-``/hhys/.````.sNMNh:`
+    /ymMMMMMMMMMMMMMMMyo.`....:shhhddh+./o++/:-.....-ss-```
+    NMMMMMMMMMMMMMMNmms:..-:::+sssyyo/:.`-+yo:--:::::+y-```
+    MMMMMMMMMMNmds+/-o+--:/++oosyys+:..```.:///++ooo++h+```
+    MMMMMMMMMNh/:.../o:-:+oossssoo++so::://oydyssssssoyh:``
+    mMMMMMMMMMMMNmmmNo.-/+ossssssyyhsoyhddyssyhysssssoyNmy:
+    :hNMMMMMMMMMMMMMMs.-:/+oosssyyyhyyssoo+oysooosssoosNMMy
+    `.+mMMMMMMMMMMMMMms:--:/+++++/+oooo+::-/+::/++++++hMMMy
+    ```-yNMMMMMMMMMMMMNd+:---:--:::////+oo++:----::+smMMMMh
+    `````/hNMMMMMMMMMMMMNmh+-..````.....---....-//ymMMMMMMh
+    ```````/ymMMMMMMMMMMMMMNmdyso+::::////++syhmNNMMMMMMMMh
+    ```` ````-syyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyo
+    ```````````````````````````````````````````````````````
 
 使用 TIMG 将图片转为 ASCII 文本！
 
@@ -38,10 +27,10 @@
 
 ```` bash
 # Local file
-./timg ./res/img.jpg
+timg ./res/img.jpg
 
 # Remote file
-./timg https://www.baidu.com/img/bd_logo1.png
+timg https://www.baidu.com/img/bd_logo1.png
 ````
 
 ## Help:
@@ -74,7 +63,7 @@ ARGS:
 * [x] 增加输出目标：文本和终端
 * [x] 强制缩放网页字体大小
 * [x] 支持网络路径
-* [ ] 浏览器自动预览
+* [x] 浏览器自动预览
 * [ ] 添加上游：本地算法
 
 ## TODO(2.0)

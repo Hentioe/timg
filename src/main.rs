@@ -3,6 +3,7 @@ extern crate timg;
 
 use clap::{App, Arg};
 use timg::upstms::Upstream;
+use timg::utils;
 use timg::{httpc, upstms};
 
 const DEFAULT_WIDTH: &'static str = "100";
@@ -63,9 +64,13 @@ fn main() {
 
     match output {
         "html" => {
-            upstms::text_image::TextImageCom::new()
-                .gen_html(path, width, scale)
-                .unwrap();
+            if let Ok(html_file) =
+                upstms::text_image::TextImageCom::new().gen_html(path, width, scale)
+            {
+                utils::open_in_broswer(&html_file);
+            } else {
+                panic!("Gennerte html failed");
+            }
         }
         "none" => upstms::text_image::TextImageCom::new().print(path, width),
         _ => panic!("Unknown output target: {}", output),
