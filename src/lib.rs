@@ -1,8 +1,10 @@
 pub mod httpc;
-pub mod upstms;
 pub mod limg;
+pub mod upstms;
 
 pub mod utils {
+    extern crate regex;
+    use self::regex::Regex;
     use std::fs::File;
     use std::io::prelude::*;
     use std::path::Path;
@@ -25,8 +27,24 @@ pub mod utils {
 
     pub fn open_in_broswer(path: &str) {
         Command::new("xdg-open")
-        .args(&[path])
-        .output()
-        .expect("Open in broswer failed");
+            .args(&[path])
+            .output()
+            .expect("Open in broswer failed");
     }
+
+    pub fn get_file_format_from_url(url: &str) -> ::std::result::Result<String, String> {
+        let re = Regex::new(r"^https?:.+/(.+\.[^\?]+).?$").unwrap();
+        if let Some(filename) = re.captures(url).map(|cap| cap[1].to_string()){
+            Ok(filename)
+        }else{
+            Err("Image format in URL is not recognized, please specify manually".to_string())
+        }
+    }
+}
+
+#[test]
+fn test_get_file_format_from_url() {
+    let url = "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png?ad=df=fdsfsdf=sfs&dsf";
+    let filename = utils::get_file_format_from_url(url).unwrap();
+    assert_eq!("googlelogo_color_272x92dp.png", filename);
 }
