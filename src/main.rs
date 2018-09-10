@@ -65,14 +65,14 @@ fn main() {
     match output {
         "html" => {
             if let Ok(html_file) =
-                upstms::text_image::TextImageCom::new().gen_html(path, width, scale)
+                upstms::local_conv::LocalImageConv::new().gen_html(path, width, scale)
             {
                 utils::open_in_broswer(&html_file);
             } else {
                 panic!("Gennerte html failed");
             }
         }
-        "none" => upstms::text_image::TextImageCom::new().print(path, width),
+        "none" => upstms::local_conv::LocalImageConv::new().print(path, width),
         _ => panic!("Unknown output target: {}", output),
     }
 }

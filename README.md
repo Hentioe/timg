@@ -1,24 +1,26 @@
 # TIMG
 
-    ```````````````````````````````````````````````````````
-    ````````````````-:----.```````.-::::--.````````...`````
-    ```````````````sNNMMMMNh+++o+/:-------::++/:/smNNNmy:``
-    `````````````./NMMMMMMMd+-.````````````````-odMMMMMMNo`
-    ````````.:+ydNMMMMMMMNy-`````````````````````.sNMMMMMd`
-    `````-+hmNMMMMMMMMMMm+.``````````````..```````.sNMMMMh`
-    ``-+hNMMMMMMMMMMMMMd:```````.-::/-``/hhys/.````.sNMNh:`
-    /ymMMMMMMMMMMMMMMMyo.`....:shhhddh+./o++/:-.....-ss-```
-    NMMMMMMMMMMMMMMNmms:..-:::+sssyyo/:.`-+yo:--:::::+y-```
-    MMMMMMMMMMNmds+/-o+--:/++oosyys+:..```.:///++ooo++h+```
-    MMMMMMMMMNh/:.../o:-:+oossssoo++so::://oydyssssssoyh:``
-    mMMMMMMMMMMMNmmmNo.-/+ossssssyyhsoyhddyssyhysssssoyNmy:
-    :hNMMMMMMMMMMMMMMs.-:/+oosssyyyhyyssoo+oysooosssoosNMMy
-    `.+mMMMMMMMMMMMMMms:--:/+++++/+oooo+::-/+::/++++++hMMMy
-    ```-yNMMMMMMMMMMMMNd+:---:--:::////+oo++:----::+smMMMMh
-    `````/hNMMMMMMMMMMMMNmh+-..````.....---....-//ymMMMMMMh
-    ```````/ymMMMMMMMMMMMMMNmdyso+::::////++syhmNNMMMMMMMMh
-    ```` ````-syyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyo
-    ```````````````````````````````````````````````````````
+                    `/#N#####h`   ``sshhhhhhhhhhhsss`    `s///hs`
+                    /MMMMMMMMMM#//hhs`            `shhhh#MMMMMMMM/`
+                    sMMMMMMMMMMNs`                      s/NMMMMMMMM#
+                `h/NMMMMMMMMMMM#`                          s#MMMMMMMMs
+            `/#MMMMMMMMMMMMMMNh                             `#MMMMMMMs
+        `/NMMMMMMMMMMMMMMMM#`                  `sss``       sNMMMMM#`
+    `h#MMMMMMMMMMMMMMMMMMNs         `ssh//s  `/NNN##h`      s#MMN/`
+    s#NMMMMMMMMMMMMMMMMMMM//`      `h#NNN#NNN/``shss`` `` ``` `h#s
+    MMMMMMMMMMMMMMMMMMMMMN/s `````ssh/hh//#/hh`  s/N#h````ssss`s/h
+    MMMMMMMMMMMMMMMMMN#hs//```sshhhh/##NN#/`       ````sshhhhhhs/#s
+    MMMMMMMMMMMMN/ss    shs``shh////////hssss`    `sh//hh//////h/Nh
+    MMMMMMMMMMMMN/hs```s#h``shh////##///hh/#/ssshhh//#NN#####////NNh
+    NMMMMMMMMMMMMMMMMMMMMs``shh///#######N#hh/##NN#/h/########///#MM#h
+    sNMMMMMMMMMMMMMMMMMMNs``ssh//////#######//##///h/#///////////#MMMMs
+    hMMMMMMMMMMMMMMMMMM/s``sshhh///hhhh///##hss`sh/hsshh////hhhNMMMMs
+    `#MMMMMMMMMMMMMMMMMNh```ssssssssssshhssss````s``ssssssssh#MMMMMs
+        hNMMMMMMMMMMMMMMMMM#ss```````````sssshh///hh```````sh#NMMMMMMs
+        `/MMMMMMMMMMMMMMMMMMM#h`          `    ``      `ss#MMMMMMMMMs
+            `/NMMMMMMMMMMMMMMMMMMN#/hss``        ```ssh/#NMMMMMMMMMMMMs
+            `hNMMMMMMMMMMMMMMMMMMMMMMMNNNNNNNNMMMMMMMMMMMMMMMMMMMMMMs
+                `````````````````````````````````````````````````````
 
 使用 TIMG 将图片转为 ASCII 文本！
 
@@ -63,7 +65,7 @@ ARGS:
 * [x] 强制缩放网页字体大小
 * [x] 支持网络路径
 * [x] 浏览器自动预览
-* [ ] 添加上游：本地算法
+* [x] 添加上游：本地算法
 
 ## TODO(2.0)
 

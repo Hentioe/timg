@@ -9,29 +9,35 @@ pub fn gen_grayscale(path: &str) -> ImageBuffer<Luma<u8>, Vec<u8>> {
     colorops::grayscale(&img)
 }
 
-pub fn split_block_avg_val(img: ImageBuffer<Luma<u8>, Vec<u8>>, width_size: u32, height_size: u32) -> Vec<u8> {
+pub fn split_block(img: ImageBuffer<Luma<u8>, Vec<u8>>, ascii_width: u32) -> String {
     let (width, height) = img.dimensions();
-    let res_width = width % width_size;
-    let res_height = height % height_size;
-    let cols = width / width_size;
-    let rows = height / height_size;
+    let block_width = width / ascii_width;
+    let block_height = 2 * block_width;
+    let res_width = width % block_width;
+    let res_height = height % block_width;
+    let cols = width / block_width;
+    let rows = height / block_height;
 
     // println!(
-    //     "宽:{},长:{},块大小:{},宽余:{},长余:{},列:{},行:{}",
-    //     width, height, size, res_width, res_height, cols, rows
+    //     "宽:{},长:{},块大小:{}:{},宽余:{},长余:{},列:{},行:{}",
+    //     width, height, block_width,block_height, res_width, res_height, cols, rows
     // );
-    let mut avg_list: Vec<u8> = Vec::new();
+    let mut avg_list: Vec<String> = Vec::new();
     for row in 0..rows + 1 {
         for col in 0..cols + 1 {
-            let (init_left, init_top) = (col * width_size, row * height_size);
+            let (init_left, init_top) = (col * block_width, row * block_height);
             let (range_width, range_height) = if col == cols {
-                let size = if row == rows { res_height } else { height_size };
+                let size = if row == rows {
+                    res_height
+                } else {
+                    block_height
+                };
                 (res_width, size)
             } else if row == rows {
-                let size = if col == cols { res_width } else { width_size };
+                let size = if col == cols { res_width } else { block_width };
                 (size, res_height)
             } else {
-                (width_size, height_size)
+                (block_width, block_height)
             };
             // println!(
             //     "列:{},行:{},坐标:{}+{}:{}+{}",
@@ -43,12 +49,11 @@ pub fn split_block_avg_val(img: ImageBuffer<Luma<u8>, Vec<u8>>, width_size: u32,
             //     range_height
             // );
             let avg = each_block_pixel_avg(&img, (init_left, init_top), range_width, range_height);
-            print!("{}", map_ascii(avg));
-            avg_list.push(avg);
+            avg_list.push(map_ascii(avg));
         }
-        println!("");
+        avg_list.push("\n".to_string());
     }
-    avg_list
+    avg_list.join("")
 }
 
 fn each_block_pixel_avg(
@@ -69,15 +74,19 @@ fn each_block_pixel_avg(
         sum += val as usize;
         sum
     });
-    let avg = sum / block_all.len();
+    let count = block_all.len();
+    if count == 0 {
+        return 255;
+    }
+    let avg = sum / count;
     (if avg > 255 { 255 } else { avg }) as u8
 }
 
 const ASCII_CHARS: [&'static str; 8] = ["M", "N", "#", "/", "h", "s", "`", " "];
 
-fn map_ascii(gray_value: u8) -> &'static str {
+fn map_ascii(gray_value: u8) -> String {
     let avg = 255 / ASCII_CHARS.len();
-    let index = (gray_value as usize / avg);
-    let index = if index > 7 {7} else {index};
-    ASCII_CHARS[index]
+    let index = gray_value as usize / avg;
+    let index = if index > 7 { 7 } else { index };
+    ASCII_CHARS[index].to_string()
 }

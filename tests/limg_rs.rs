@@ -1,6 +1,6 @@
 extern crate timg;
 
-use timg::img::*;
+use timg::limg::*;
 
 #[test]
 fn gen_grayscale_img() {
@@ -10,5 +10,6 @@ fn gen_grayscale_img() {
 #[test]
 fn split_block_avg_val_img() {
     let img = gen_grayscale("./res/img.jpg");
-    split_block_avg_val(img, 2, 4);
+    let result = split_block(img, 100);
+    println!("{}", result);
 }
