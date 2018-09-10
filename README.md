@@ -22,7 +22,6 @@
 
 使用 TIMG 将图片转为 ASCII 文本！
 
-
 ## Usage
 
 ```` bash
@@ -33,7 +32,7 @@ timg ./res/img.jpg
 timg https://www.baidu.com/img/bd_logo1.png
 ````
 
-## Help:
+## Help
 
 ```` text
 TIMG alpha

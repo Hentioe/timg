@@ -1,5 +1,6 @@
 pub mod httpc;
 pub mod upstms;
+pub mod img;
 
 pub mod utils {
     use std::fs::File;
