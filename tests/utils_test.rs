@@ -17,3 +17,11 @@ fn get_parent_path() {
 
     assert_eq!(utils::get_parent_path(&path), "./res");
 }
+
+
+#[test]
+fn get_file_format_from_url() {
+    let url = "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png?ad=df=fdsfsdf=sfs&dsf";
+    let filename = utils::get_file_format_from_url(url).unwrap();
+    assert_eq!("googlelogo_color_272x92dp.png", filename);
+}
