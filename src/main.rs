@@ -1,43 +1,13 @@
-extern crate clap;
 extern crate timg;
 
-use clap::{App, Arg};
 use timg::upstms::Upstream;
-use timg::utils;
-use timg::{httpc, upstms};
+use timg::{utils,httpc, upstms,cli};
 
 const DEFAULT_WIDTH: &'static str = "100";
 const DEFAULT_SCALE: &'static str = "1";
 
 fn main() {
-    let matches = App::new("TIMG")
-        .version("alpha")
-        .about("Image to ASCII")
-        .author("Hentioe Cl (绅士喵)")
-        .arg(
-            Arg::with_name("path")
-                .help("The image file path")
-                .required(true)
-                .index(1),
-        ).arg(
-            Arg::with_name("width")
-                .long("width")
-                .short("w")
-                .help("Set output ASCII text width")
-                .takes_value(true),
-        ).arg(
-            Arg::with_name("scale")
-                .long("scale")
-                .short("s")
-                .help("Scale html font size, unit: [pixel]")
-                .takes_value(true),
-        ).arg(
-            Arg::with_name("output")
-                .long("output")
-                .short("o")
-                .help("Output target: html/default: text for terminal")
-                .takes_value(true),
-        ).get_matches();
+    let matches = cli::gen_args_parser().get_matches();
     let path = matches.value_of("path").unwrap();
     let width = matches
         .value_of("width")
@@ -70,10 +40,11 @@ fn main() {
             {
                 utils::open_in_broswer(&html_file);
             } else {
-                panic!("Gennerte html failed");
+                panic!("Failed to generate html");
             }
         }
         "none" => upstms::local_conv::LocalImageConv::new().print(&path, width),
         _ => panic!("Unknown output target: {}", output),
     }
 }
+

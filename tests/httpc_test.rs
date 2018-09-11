@@ -4,7 +4,7 @@ extern crate timg;
 use reqwest::StatusCode;
 use std::str;
 use timg::httpc::*;
-
+use timg::utils;
 #[test]
 fn http_get() {
     let resp = get("https://www.text-image.com/convert/").unwrap();
@@ -34,7 +34,9 @@ fn http_post() {
 fn download_file() {
     let file_name = download(
         "https://www.baidu.com/img/bd_logo1.png?where=super",
-        "./.timg_download",
+        "./bd_logo1.png",
     ).unwrap();
-    assert_eq!(".timg_download", file_name);
+    assert_eq!("bd_logo1.png", file_name);
+    utils::remove_file("./bd_logo1.png").unwrap();
+
 }

@@ -1,10 +1,12 @@
 extern crate timg;
 
 use timg::limg::*;
+use timg::utils;
 
 #[test]
 fn gen_grayscale_img() {
     gen_grayscale("./res/img.jpg").save("test.jpg").unwrap();
+    utils::remove_file("./test.jpg").unwrap();
 }
 
 #[test]
