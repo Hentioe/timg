@@ -1,7 +1,8 @@
 pub mod httpc;
 pub mod limg;
-pub mod upstms;
+pub mod upstm;
 pub mod cli;
+pub mod conv;
 
 pub mod utils {
     extern crate regex;
@@ -38,7 +39,7 @@ pub mod utils {
             .expect("Open in broswer failed");
     }
 
-    pub fn get_file_format_from_url(url: &str) -> ::std::result::Result<String, String> {
+    pub fn get_file_format_from_url(url: &str) -> Result<String, String> {
         let re = Regex::new(r"^https?:.+/(.+\.[^\?]+).+?$").unwrap();
         if let Some(filename) = re.captures(url).map(|cap| cap[1].to_string()){
             Ok(filename)

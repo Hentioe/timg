@@ -1,5 +1,5 @@
 use limg;
-use upstms::{UpResult, Upstream};
+use upstm::{UpResult, Upstream};
 
 pub struct ImageConv;
 

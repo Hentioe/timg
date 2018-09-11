@@ -1,5 +1,3 @@
-pub mod text_image;
-pub mod local_conv;
 
 use utils;
 

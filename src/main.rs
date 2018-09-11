@@ -1,7 +1,6 @@
 extern crate timg;
 
-use timg::upstms::Upstream;
-use timg::{utils,httpc, upstms,cli};
+use timg::{cli, conv, httpc, utils, upstm::Upstream};
 
 const DEFAULT_WIDTH: &'static str = "100";
 const DEFAULT_SCALE: &'static str = "1";
@@ -35,16 +34,13 @@ fn main() {
 
     match output {
         "html" => {
-            if let Ok(html_file) =
-                upstms::local_conv::LocalImageConv::new().gen_html(&path, width, scale)
-            {
+            if let Ok(html_file) = conv::ImageConv::new().gen_html(&path, width, scale) {
                 utils::open_in_broswer(&html_file);
             } else {
                 panic!("Failed to generate html");
             }
         }
-        "none" => upstms::local_conv::LocalImageConv::new().print(&path, width),
+        "none" => conv::ImageConv::new().print(&path, width),
         _ => panic!("Unknown output target: {}", output),
     }
 }
-
