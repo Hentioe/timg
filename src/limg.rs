@@ -82,11 +82,12 @@ fn each_block_pixel_avg(
     (if avg > 255 { 255 } else { avg }) as u8
 }
 
-const ASCII_CHARS: [&'static str; 8] = ["M", "N", "#", "/", "h", "s", "`", " "];
+const ASCII_CHARS: &'static [&'static str] = &["M", "N", "#", "/", "h", "s", "`", " "];
 
 fn map_ascii(gray_value: u8) -> String {
-    let avg = 255 / ASCII_CHARS.len();
+    let len = ASCII_CHARS.len();
+    let avg = 255 / len;
     let index = gray_value as usize / avg;
-    let index = if index > 7 { 7 } else { index };
+    let index = if index > len - 1 { len - 1 } else { index };
     ASCII_CHARS[index].to_string()
 }

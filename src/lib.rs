@@ -40,7 +40,7 @@ pub mod utils {
     }
 
     pub fn get_file_format_from_url(url: &str) -> Result<String, String> {
-        let re = Regex::new(r"^https?:.+/(.+\.[^\?]+).+?$").unwrap();
+        let re = Regex::new(r"^https?:.+/(.+\.[^\?]+).*$").unwrap();
         if let Some(filename) = re.captures(url).map(|cap| cap[1].to_string()){
             Ok(filename)
         }else{
