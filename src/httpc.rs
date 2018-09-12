@@ -26,14 +26,22 @@ pub fn post(url: &str, form: Form) -> Result<reqwest::Response> {
 }
 
 pub fn download(url: &str, path: &str) -> std::result::Result<String, String> {
-    let mut resp = reqwest::Client::new()
+    let mut resp = match reqwest::Client::new()
         .get(url)
         .header(UserAgent::new(DEFAULT_USER_AGENT))
         .send()
-        .unwrap();
-    let mut output_file = File::create(path).unwrap();
-    match io::copy(&mut resp, &mut output_file) {
-        Ok(_) => Ok(utils::get_filename(path).to_string()),
-        Err(e) => Err(format!("由于某些原因下载失败: {}", e).to_string()),
+    {
+        Ok(resp) => resp,
+        Err(e) => return Err(format!("发起下载请求时候发生错误: {:?}", e)),
+    };
+    if let Ok(_) = File::create(path).and_then(|mut output_file| io::copy(&mut resp, &mut output_file))
+    {
+        if let Some(file_name) = utils::get_filename(path) {
+            Ok(file_name.to_string())
+        } else {
+            Err("没有正确获取到下载后的文件名".to_string())
+        }
+    } else {
+        Err("下载文件到本地失败".to_string())
     }
 }

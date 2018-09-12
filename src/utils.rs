@@ -1,36 +1,42 @@
 extern crate regex;
 
 use self::regex::Regex;
-use std::fs::File;
-use std::io::prelude::*;
+use std::fs::{self, File};
+use std::io::{self, prelude::*};
+use std::option::Option;
 use std::path::Path;
-use std::process::Command;
+use std::process::{self, Command};
 use std::result::Result;
 
-pub fn get_filename(path: &str) -> &str {
-    let file_name = Path::new(path).file_name().unwrap().to_str().unwrap();
-    file_name
+pub fn get_filename(path: &str) -> Option<&str> {
+    Path::new(path)
+        .file_name()
+        .and_then(|file_name| file_name.to_str())
 }
 
-pub fn get_parent_path(path: &str) -> &str {
-    let parent_path = Path::new(path).parent().unwrap().to_str().unwrap();
-    parent_path
+pub fn get_parent_path(path: &str) -> Option<&str> {
+    Path::new(path)
+        .parent()
+        .and_then(|parent_path| parent_path.to_str())
 }
 
-pub fn save_to(bytes: &[u8], file_path: &str) {
-    let mut file = File::create(file_path).unwrap();
-    file.write_all(bytes).unwrap();
+pub fn save_to(bytes: &[u8], file_path: &str) -> Result<(), String> {
+    let mut file = match File::create(file_path) {
+        Ok(file) => file,
+        Err(e) => return Err(format!("创建文件时出错: {:?}", e)),
+    };
+    match file.write_all(bytes) {
+        Ok(_) => Ok(()),
+        Err(e) => Err(format!("写入文件时出错: {:?}", e)),
+    }
 }
 
-pub fn remove_file(path: &str) -> ::std::io::Result<()> {
-    ::std::fs::remove_file(path)
+pub fn remove_file(path: &str) -> io::Result<()> {
+    fs::remove_file(path)
 }
 
-pub fn open_in_broswer(path: &str) {
-    Command::new("xdg-open")
-        .args(&[path])
-        .output()
-        .expect("Failed to open browser");
+pub fn open_in_broswer(path: &str) -> io::Result<process::Output> {
+    Command::new("xdg-open").args(&[path]).output()
 }
 
 lazy_static! {

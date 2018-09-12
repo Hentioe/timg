@@ -35,7 +35,7 @@ fn main() {
     match output {
         "html" => {
             if let Ok(html_file) = conv::ImageConv::new().gen_html(&path, width, scale) {
-                utils::open_in_broswer(&html_file);
+                utils::open_in_broswer(&html_file).unwrap();
             } else {
                 panic!("Failed to generate html");
             }
