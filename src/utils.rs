@@ -1,5 +1,7 @@
+extern crate colored;
 extern crate regex;
 
+use self::colored::*;
 use self::regex::Regex;
 use std::fs::{self, File};
 use std::io::{self, prelude::*};
@@ -39,6 +41,17 @@ pub fn open_in_broswer(path: &str) -> io::Result<process::Output> {
     Command::new("xdg-open").args(&[path]).output()
 }
 
+pub fn cause_exit<T: ::std::fmt::Debug>(err: T) {
+    println!("{}", format!("[Error] {:?}", err).red());
+    ::std::process::exit(1);
+}
+
+pub fn safe_exit<T, E: ::std::fmt::Debug>(r: Result<T, E>) {
+    match r {
+        Ok(_) => (),
+        Err(e) => cause_exit(e),
+    };
+}
 lazy_static! {
     static ref RE_URL: Regex = Regex::new(r"^https?:.+/(.+\.[^\?]+).*$").unwrap();
 }

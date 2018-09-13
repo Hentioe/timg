@@ -1,4 +1,3 @@
-
 use utils;
 
 pub type UpResult = Result<String, &'static str>;
@@ -24,7 +23,10 @@ pub trait Upstream {
         }
     }
 
-    fn print(&self, path: &str, width: u32) {
-        println!("{}", self.gen_text(path, width).unwrap())
+    fn print(&self, path: &str, width: u32) -> ::std::result::Result<(), String> {
+        match self.gen_text(path, width) {
+            Ok(text) => Ok(println!("{}", text)),
+            Err(e) => Err(e.to_string()),
+        }
     }
 }

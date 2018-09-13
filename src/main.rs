@@ -1,6 +1,7 @@
 extern crate timg;
 
-use timg::{cli, conv, httpc, utils, upstm::Upstream};
+use timg::utils::{self, safe_exit};
+use timg::{cli, conv, httpc, upstm::Upstream};
 
 const DEFAULT_WIDTH: &'static str = "100";
 const DEFAULT_SCALE: &'static str = "1";
@@ -20,27 +21,26 @@ fn main() {
         .parse::<u32>()
         .unwrap_or(DEFAULT_SCALE.parse::<u32>().unwrap());
 
-    let path = if let Some(i) = path.find("http") {
-        if i == 0 {
-            let filename = utils::get_file_format_from_url(path).unwrap();
-            httpc::download(path, &filename).unwrap();
-            ("./".to_owned() + &filename).to_string()
-        } else {
-            path.to_string()
-        }
+    let is_url = if let Some(i) = path.find("http") {
+        i == 0
+    } else {
+        false
+    };
+
+    let path = if is_url {
+        let filename = utils::get_file_format_from_url(path).unwrap();
+        safe_exit(httpc::download(path, &filename));
+        ("./".to_owned() + &filename).to_string()
     } else {
         path.to_string()
     };
 
     match output {
-        "html" => {
-            if let Ok(html_file) = conv::ImageConv::new().gen_html(&path, width, scale) {
-                utils::open_in_broswer(&html_file).unwrap();
-            } else {
-                panic!("Failed to generate html");
-            }
-        }
-        "none" => conv::ImageConv::new().print(&path, width),
+        "html" => match conv::ImageConv::new().gen_html(&path, width, scale) {
+            Ok(html_file) => safe_exit(utils::open_in_broswer(&html_file)),
+            Err(e) => utils::cause_exit(e),
+        },
+        "none" => safe_exit(conv::ImageConv::new().print(&path, width)),
         _ => panic!("Unknown output target: {}", output),
     }
 }
